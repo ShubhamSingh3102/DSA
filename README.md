@@ -1,3 +1,5 @@
+### Shubham’s DSA Forge
+
 > *Turning confusion into clean logic — one problem at a time.*
 
 Welcome to my personal **Data Structures & Algorithms practice vault**.
