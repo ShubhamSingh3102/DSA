@@ -1,0 +1,18 @@
+class Solution {
+    public int furthestDistanceFromOrigin(String moves) {
+        int right = 0;
+        int left = 0;
+        int dash = 0;
+
+        for (char ch : moves.toCharArray()) {
+            if (ch == 'L') {
+                left++;
+            } else if (ch == 'R') {
+                right++;
+            } else {
+                dash++;
+            }
+        }
+        return Math.abs(left - right) + dash;
+    }
+}
