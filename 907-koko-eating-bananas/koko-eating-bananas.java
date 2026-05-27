@@ -15,7 +15,7 @@ class Solution {
             high = Math.max(high, piles[i]);
         }
 
-        int res = high;
+        int res = -1;
 
         while(low <= high){
             int mid = low + (high - low) / 2;
