@@ -7,7 +7,7 @@ class Solution {
         int row = n - 1;
         int col = 0;
 
-        // TC ---> O(log(m + n)) --> worst case
+        // TC ---> O(m + n) --> worst case
         while(row >= 0 && col < m){
             if(matrix[row][col] == target){
                 return true;
