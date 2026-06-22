@@ -1,6 +1,6 @@
 class Solution {
     public int maxNumberOfBalloons(String text) {
-       int n = text.length();
+        int n = text.length();
         HashMap<Character,Integer> have = new HashMap<>();  // text
         HashMap<Character,Integer> needed = new HashMap<>();  // balloon
 
@@ -26,6 +26,6 @@ class Solution {
             int times = fHave / fNeed;
             res = Math.min(res,times);
         }
-        return res; 
+        return res;
     }
 }
