@@ -14,10 +14,9 @@
  * }
  */
 class Solution {
-    TreeNode prev = null;
-    boolean ans = true;  // maan lo validate h
-
-    public void inOrder(TreeNode root){
+    static TreeNode prev = null;
+    static boolean ans = true;  // maan lo validate h
+    public static void inOrder(TreeNode root){
         if (root == null){
             return;
         }
@@ -37,14 +36,13 @@ class Solution {
 
     }
     public boolean isValidBST(TreeNode root) {
-        
         if (root == null){
             return true;
         }
 
         prev = null;
         ans = true;
-        
+
         inOrder(root);
         return ans;
     }
