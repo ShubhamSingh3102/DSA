@@ -14,19 +14,35 @@
  * }
  */
 class Solution {
-     public int solve(TreeNode root,int val){
+    static int res = 0;
+
+    public int sumNumbers(TreeNode root) {
+        
+        res = 0;
+
         if(root == null){
             return 0;
         }
 
-        val = (10 * val) + ( 1 * root.val);
+        helper(root,0);
 
-        if(root.left == null && root.right == null){
-            return val;
-        }
-        return solve(root.left,val) + solve(root.right,val);
+        return res;
     }
-    public int sumNumbers(TreeNode root) {
-        return solve(root,0);
+
+    public static void helper(TreeNode root,int sum){
+        if(root == null){
+            return;
+        }
+
+        sum = sum * 10 + root.val;
+
+        // leaf
+        if(root.left == null && root.right == null){
+            res += sum;
+            return;
+        }
+
+        helper(root.left,sum);
+        helper(root.right,sum);
     }
 }
