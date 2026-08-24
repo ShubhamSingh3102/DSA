@@ -14,13 +14,14 @@
  * }
  */
 class Solution {
-     TreeNode prev = null;
-     TreeNode g1First = null;
-     TreeNode g1second = null;
-     TreeNode g2First = null;
-     TreeNode g2second = null;
-     int galat = 0;
-    public void inOrder(TreeNode root){
+    static TreeNode prev = null;
+    static TreeNode g1First = null;
+    static TreeNode g1second = null;
+    static TreeNode g2First = null;
+    static TreeNode g2second = null;
+    static int galat = 0;
+
+    public static void inOrder(TreeNode root){
         if (root == null){
             return;
         }
@@ -49,7 +50,7 @@ class Solution {
 
         inOrder(root.right);
     }
-    public void swap(TreeNode p,TreeNode q){
+    public static void swap(TreeNode p,TreeNode q){
         int temp = p.val;
         p.val = q.val;
         q.val = temp;
