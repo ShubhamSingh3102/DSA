@@ -15,30 +15,36 @@
  */
 class Solution {
     boolean res = false;
-    public void helper(TreeNode root,int sum,int targetSum){
-        if(root == null){
+
+    public boolean hasPathSum(TreeNode root, int targetSum) {
+
+        res = false; // reset
+
+        if (root == null) {
+            return false;
+        }
+        helper(root, 0, targetSum);
+
+        return res;
+    }
+
+    public void helper(TreeNode root, int sum, int target) {
+        if (root == null) {
             return;
         }
         sum += root.val;
 
         // leaf
-        if(root.left == null && root.right == null){
-            if(sum == targetSum){
+        if (root.left == null && root.right == null) {
+            if (sum == target) {
                 res = true;
             }
             return;
         }
 
-        helper(root.left,sum,targetSum);
-        helper(root.right,sum,targetSum);
-    }
-    public boolean hasPathSum(TreeNode root, int targetSum) {
-        if(root == null){
-            return false;
-        }
+        // non-leaf
 
-        helper(root,0,targetSum);
-
-        return res;
+        helper(root.left, sum, target);
+        helper(root.right, sum, target);
     }
 }
