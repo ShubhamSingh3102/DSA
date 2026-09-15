@@ -9,7 +9,6 @@ class Solution {
             this.second = s;
         }
     }
-    // O(n) + O(n log k)
     public int[] topKFrequent(int[] nums, int k) {
         HashMap<Integer,Integer> map = new HashMap<>();
         // phele hashmap me store kro frequency....
@@ -18,7 +17,8 @@ class Solution {
         for(int i = 0; i < n; i++){
             map.put(nums[i], map.getOrDefault(nums[i],0) + 1);
         }
-        // heap me store kro mean
+
+        // heap me store kro heap min
         PriorityQueue<Pair> pq = new PriorityQueue<>((a, b) -> {
             if(a.first != b.first){
                 return a.first - b.first;
