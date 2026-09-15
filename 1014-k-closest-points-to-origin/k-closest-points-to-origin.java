@@ -8,12 +8,13 @@ class Solution {
             this.second = s;
         }
     }
-    public double calculateDistance(int x, int y){
+    public static double calculateDistance(int x, int y){
         // under root(x2-x1)^2 + under root(y2-y1)^2  --> origin means x2 = 0 and y1 = 0
         // therefore under root((x1)^2 + (y1)^2)
         return Math.sqrt(x*x + y*y);
     }
     public int[][] kClosest(int[][] points, int k) {
+         // max heap banao
         PriorityQueue<Pair> pq = new PriorityQueue<>((a, b) -> {
             if(a.first != b.first){
                 return Double.compare(b.first, a.first);
