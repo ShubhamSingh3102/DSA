@@ -27,29 +27,16 @@ class Solution {
 
         for (ArrayList<Integer> sub : subArrays) {
 
-            int uniqueCount = 0;
+            HashSet<Integer> set = new HashSet<>();
 
             for (int i = 0; i < sub.size(); i++) {
-
-                boolean alreadyCounted = false;
-
-                // Check whether this element appeared before
-                for (int j = 0; j < i; j++) {
-
-                    if (sub.get(i).equals(sub.get(j))) {
-                        alreadyCounted = true;
-                        break;
-                    }
-                }
-
-                if (!alreadyCounted) {
-                    uniqueCount++;
-                }
+                set.add(sub.get(i));
             }
+
+            int uniqueCount = set.size();
 
             ans = ans + uniqueCount * uniqueCount;
         }
-
         return ans;
     }
 }
